@@ -19,11 +19,13 @@ let questions = [
   "What is the minimum crew size for the ISS? "
 ]
 
-let correctAnswers = ["Sally Ride", 
+let correctAnswers = [
+  "Sally Ride", 
   "true",
   "40",
   "Trajectory",
-  "3"]
+  "3"
+]
 
 let candidateAnswers = []
 
@@ -35,22 +37,29 @@ candidateName = input.question("What is your name: ")
 
 function askQuestion() {
   // TODO 1.2b: Ask candidate the question and assign the response as candidateAnswer //
+  // candidateAnswer = input.question(question)
 
 for (let i = 0; i < questions.length; i++) {
-  let candidateAnswers = input.question(questions[i]);
+  candidateAnswers[i] = input.question(questions[i]); 
+  
   // candidateAnswers.push(candidateAnswers);
 }
+// console.log(candidateAnswers)
 }
 function gradeQuiz(candidateAnswers) {
 
   // TODO 1.2c: Let the candidate know if they have answered the question correctly or incorrectly // 
-if (candidateAnswer = correctAnswer) {
-  console.log("Correct!");
-} else {
-  console.log("Incorrect.")
+// if (candidateAnswer = correctAnswer) {
+//   console.log("Correct!");
+// } else {
+//   console.log("Incorrect.")
+// }
+
+// console.log(`Your answers were: ${candidateAnswers}. The correct answers are: ${correctAnswers}.`)
+
+for (let i = 0; i < questions.length; i++) {
+ console.log(`Your answer was: ${candidateAnswers[i]}. The correct answer was: ${correctAnswers[i]}.`) 
 }
-
-
 
   let grade;  //TODO 3.2 use this variable to calculate the candidates score.
 
