@@ -41,28 +41,34 @@ function askQuestion() {
 
 for (let i = 0; i < questions.length; i++) {
   candidateAnswers[i] = input.question(questions[i]); 
-  
-  // candidateAnswers.push(candidateAnswers);
-}
+  }
 // console.log(candidateAnswers)
 }
 function gradeQuiz(candidateAnswers) {
 
   // TODO 1.2c: Let the candidate know if they have answered the question correctly or incorrectly // 
-// if (candidateAnswer = correctAnswer) {
-//   console.log("Correct!");
-// } else {
-//   console.log("Incorrect.")
-// }
+
 
 // console.log(`Your answers were: ${candidateAnswers}. The correct answers are: ${correctAnswers}.`)
+let numberOfCorrectAnswers = 0;
 
 for (let i = 0; i < questions.length; i++) {
- console.log(`Your answer was: ${candidateAnswers[i]}. The correct answer was: ${correctAnswers[i]}.`) 
+  if (candidateAnswers[i].toLowerCase() === correctAnswers[i].toLowerCase()) {
+    console.log(`Your answer was: ${candidateAnswers[i]}. The correct answer was: ${correctAnswers[i]}.`) 
+    numberOfCorrectAnswers = numberOfCorrectAnswers + 1
+
+  } else {
+    console.log(`Your answer was: ${candidateAnswers[i]}. The correct answer was: ${correctAnswers[i]}.`) 
+  }
+ }
+
+  let grade = (numberOfCorrectAnswers/questions.length)*100; //TODO 3.2 use this variable to calculate the candidates score.
+
+if (numberOfCorrectAnswers >= 4) {
+  console.log(`You have answered ${grade}% of questions correctly. You have passed!`)
+} else {
+  console.log(`Your score was ${grade}%. The passing score is 80%. You have not passed.`)
 }
-
-  let grade;  //TODO 3.2 use this variable to calculate the candidates score.
-
 
   return grade;
 }
